@@ -21,7 +21,6 @@ function checkId(req, res, next) {
   return next();
 }
 
-
 //Middleware de contagem global
 
 let usos = 0;
@@ -39,6 +38,7 @@ server.post('/projects', (req, res) => {
   const { title } = req.body;
   const { id } = req.body;
   const { tasks } = req.body;
+  
   const project = {id, title, tasks }
 
   projectsList.push(project);
@@ -49,7 +49,6 @@ server.post('/projects', (req, res) => {
 //Lista todos os projetos
 server.get('/projects', (req, res) => {
   return res.json(projectsList);
-
 })
 
 //Troca Titulo
